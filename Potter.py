@@ -1,3 +1,3 @@
 class Potter:
     def price(self, basket):
-        pass
+        return 8 * len(basket)
