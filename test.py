@@ -19,5 +19,10 @@ class TestPotter(unittest.TestCase):
         assert (8 * 4 * 0.8 == self.test_object.price([0, 1, 2, 4]))
     def testSimpleDiscounts4(self):
         assert (8 * 5 * 0.75 == self.test_object.price([0, 1, 2, 3, 4]))
+    def testSeveralDiscounts(self):
+        assert (8 + (8 * 2 * 0.95) == self.test_object.price([0, 0, 1]))
+        assert (2 * (8 * 2 * 0.95) == self.test_object.price([0, 0, 1, 1]))
+        assert ((8 * 4 * 0.8) + (8 * 2 * 0.95) == self.test_object.price([0, 0, 1, 2, 2, 3]))
+        assert (8 + (8 * 5 * 0.75) == self.test_object.price([0, 1, 1, 2, 3, 4]))
 if __name__ == '__main__':
     unittest.main()
