@@ -1,4 +1,3 @@
-import imp
 import unittest
 from Potter import Potter
 
@@ -12,5 +11,13 @@ class TestPotter(unittest.TestCase):
         assert (8 == self.test_object.price([3]))
         assert (8 == self.test_object.price([4]))
         assert (8 * 3 == self.test_object.price([1, 1, 1]))
+    def testSimpleDiscounts1(self):
+        assert (8 * 2 * 0.95 == self.test_object.price([0, 1]))
+    def testSimpleDiscounts2(self):
+        assert (8 * 3 * 0.9 == self.test_object.price([0, 2, 4]))
+    def testSimpleDiscounts3(self):
+        assert (8 * 4 * 0.8 == self.test_object.price([0, 1, 2, 4]))
+    def testSimpleDiscounts4(self):
+        assert (8 * 5 * 0.75 == self.test_object.price([0, 1, 2, 3, 4]))
 if __name__ == '__main__':
     unittest.main()
