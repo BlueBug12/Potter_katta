@@ -24,5 +24,6 @@ class TestPotter(unittest.TestCase):
         assert (2 * (book_price * 2 * 0.95) == self.test_object.price([0, 0, 1, 1]))
         assert ((book_price * 4 * 0.8) + (book_price * 2 * 0.95) == self.test_object.price([0, 0, 1, 2, 2, 3]))
         assert (book_price + (book_price * 5 * 0.75) == self.test_object.price([0, 1, 1, 2, 3, 4]))
+        assert (2 * 4 * book_price * 0.8 == self.test_object.price([0, 0, 1, 1, 2, 2, 3, 4]))
 if __name__ == '__main__':
     unittest.main()
