@@ -2,15 +2,13 @@ from itertools import combinations
 class Potter:
     def __init__(self,book_price):
         self.book_price = book_price
-        self.discount = {0:1, 1:1, 2:0.95, 3:0.9, 4:0.8, 5:0.75}
-    def pick_combination(self, basket, books_num):
-        return list(set(basket))[:books_num]
+        self.discount = {0:0, 1:1, 2:1.9, 3:2.7, 4:3.2, 5:3.75}
     def remove_books_from_basket(self, basket, books):
         for b in books:
             basket.remove(b)
         return basket
     def discountprice(self, n):
-        return self.book_price*n*self.discount[n]
+        return self.book_price*self.discount[n]
     def price(self, basket):
         type_num = len(set(basket))
         return self.count(basket,type_num)
